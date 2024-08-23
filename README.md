@@ -5,7 +5,7 @@
 
 Esse projeto foi realizado em conjunto com a Imersão Java Spring da [devsuperior](https://www.devsuperior.com.br/), ministrada pelo professor Nélio Alves.
 
-De forma resumida, Este é meu primeiro projeto utilizando o framework Spring Boot, com a implementação de Design Patterns, conexão com banco de dados (utilizamos o banco H2 como teste) e fazendo requisições http com Postman.
+De forma resumida, esse é meu primeiro projeto utilizando o framework Spring Boot, com a implementação de Design Patterns, conexão com banco de dados (utilizamos o banco H2 como teste) e fazendo requisições http com Postman.
 
 No geral, trata-se de um sistema básico de jogos e suas descrições.
 
