@@ -3,16 +3,15 @@
 
 # Sobre o projeto
 
-Esse projeto foi realizado em conjunto com a Imersão Java Spring da [devsuperior](https://www.devsuperior.com.br/), com o professor Nélio Alves.
+Esse projeto foi realizado em conjunto com a Imersão Java Spring da [devsuperior](https://www.devsuperior.com.br/), ministrada pelo professor Nélio Alves.
 
-De forma resumida, Este é meu primeiro projeto utilizando o framework Spring Boot, junto a conexão com banco de dados (utilizamos o banco H2 como teste), utilizando padrões de projetos e fazendo requisições http com Postman.
+De forma resumida, Este é meu primeiro projeto utilizando o framework Spring Boot, com a implementação de Design Patterns, conexão com banco de dados (utilizamos o banco H2 como teste) e fazendo requisições http com Postman.
 
 No geral, trata-se de um sistema básico de jogos e suas descrições.
 
 # Competências
 - Padrão de Projeto: DAO (Data Access Object)
 - Sistema em camadas
-
 
 # Tecnologias utilizadas
 ## Back end
@@ -26,12 +25,3 @@ No geral, trata-se de um sistema básico de jogos e suas descrições.
   
 ## Requisições web
 - Postman (teste de requisições com métodos GET, PUT, POST e DELETE)
-
-
-
-# Autor
-
-Nathan Paiva de Lacerda
-
-https://www.linkedin.com/in/nathan-paiva-636336236
-
