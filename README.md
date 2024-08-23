@@ -9,9 +9,11 @@ De forma resumida, esse é meu primeiro projeto utilizando o framework Spring Bo
 
 No geral, trata-se de um sistema básico de jogos e suas descrições.
 
+
 # Competências
 - Padrão de Projeto: DAO (Data Access Object)
 - Sistema em camadas
+
 
 # Tecnologias utilizadas
 ## Back end
