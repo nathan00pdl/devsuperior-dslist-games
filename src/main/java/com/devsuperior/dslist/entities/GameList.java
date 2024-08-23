@@ -8,32 +8,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity  //Configuração da classe java ('GameList') para equivaler a uma tabela do banco relacional
+@Entity
 @Table (name = "tb_game_list")
 public class GameList {
-
-	//Declarando atributos
-	@Id  //Definição do atributo 'id' como primary key 
-	@GeneratedValue (strategy = GenerationType.IDENTITY)  //'id' autoincrementado pelo banco de dados
+	@Id  
+	@GeneratedValue (strategy = GenerationType.IDENTITY)  
 	private Long id;
 	private String name;
 	
-	//Declarando construtores
 	public GameList () {}
-	
 	public GameList (Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 
-	//Declarando métodos getters e setters
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	
 	public String getName() {
 		return name;
@@ -42,7 +36,6 @@ public class GameList {
 		this.name = name;
 	}
 
-	//Declarando métodos equals e hashCode
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -59,5 +52,4 @@ public class GameList {
 		GameList other = (GameList) obj;
 		return Objects.equals(id, other.id);
 	}	
-	
 }

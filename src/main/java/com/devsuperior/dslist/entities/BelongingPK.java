@@ -6,10 +6,9 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Embeddable  //Encapsulamento de dois atributos ('game' e 'list') em uma classe ('BelongingPK')
+@Embeddable  //Encapsulamento dos dois atributos 
 public class BelongingPK {
 	
-	//Declarando referências
 	@ManyToOne
 	@JoinColumn (name = "game_id")
 	private Game game;
@@ -18,23 +17,18 @@ public class BelongingPK {
 	@JoinColumn (name = "list_id")
 	private GameList list;
 
-	
-	//Declarando construtores
-	public BelongingPK () {}
-	
+	public BelongingPK () {}	
 	public BelongingPK (Game game, GameList list) {
 		this.game = game;
 		this.list = list;
 	}
 
-	//Declarando métodos getters e setters
 	public Game getGame() {
 		return game;
 	}
 	public void setGame(Game game) {
 		this.game = game;
 	}
-
 	
 	public GameList getList() {
 		return list;
@@ -43,7 +37,6 @@ public class BelongingPK {
 		this.list = list;
 	}
 
-	//Declarando métodos equals e hashCode
 	@Override
 	public int hashCode() {
 		return Objects.hash(game, list);
@@ -59,6 +52,5 @@ public class BelongingPK {
 			return false;
 		BelongingPK other = (BelongingPK) obj;
 		return Objects.equals(game, other.game) && Objects.equals(list, other.list);
-	}
-	
+	}	
 }

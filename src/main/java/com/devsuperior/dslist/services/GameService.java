@@ -12,9 +12,9 @@ import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.projections.GameMinProjection;
 import com.devsuperior.dslist.reppositories.GameRepository;
 
+//Camada de 'Services' envia dados padronizados em DTO (e não como uma entidade) para camada de 'Controllers'
 
-
-@Service  //"Registrando" a classe 'GameService' no sistemas   
+@Service  //"Registrando" a classe no sistemas   
 public class GameService {
 
 	@Autowired //"injeção" de uma instância da classe 'GameRepository' na classe 'GameService'

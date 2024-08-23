@@ -14,10 +14,10 @@ import com.devsuperior.dslist.reppositories.GameRepository;
 
 
 
-@Service  //"Registrando" a classe 'GameService' no sistemas   
+@Service  //'Registrando' a classe no sistemas   
 public class GameListService {
 
-	@Autowired //"injeção" de uma instância da classe 'GameListRepository' na classe 'GameListService'
+	@Autowired
 	private GameListRepository gameListRepository;
 	
 	
@@ -28,7 +28,7 @@ public class GameListService {
 	}
 	
 	
-	@Autowired //"injeção" de uma instância da classe 'GameRepository' na classe 'GameListService'
+	@Autowired 
 	private GameRepository gameRepository;
 	
 	//Lógica de alteração das posições dos jogos
@@ -38,12 +38,11 @@ public class GameListService {
 		//Buscando da memória a lista de jogos
 		List<GameMinProjection> list = gameRepository.searchByList(listId);
 		
-		//Obs: Alteração de posição -> remove o jogo de uma posição (sourceIndex) e insere na posição escolhida (destinationIndex)
+		//Alteração de posição -> remove o jogo de uma posição (sourceIndex) e insere na posição escolhida (destinationIndex)
 		GameMinProjection obj = list.remove(sourceIndex);
 		list.add(destinationIndex, obj);
 		
-		//Declaração de variáveis para guardar a posição "mínima" e "máxima" entre 'sourceIndex' e 'destinationIndex'
-		//"Se sourceIndex for menor que destinationIndex, então (?) o mínimo é sourceIndex, caso contrário (:) será o destinationIndex"
+		//Declaração de variáveis para guardar a posição mínima e máxima entre 'sourceIndex' e 'destinationIndex'
 		int min = sourceIndex < destinationIndex ? sourceIndex : destinationIndex;
 		int max = sourceIndex < destinationIndex ? destinationIndex : sourceIndex;
 		

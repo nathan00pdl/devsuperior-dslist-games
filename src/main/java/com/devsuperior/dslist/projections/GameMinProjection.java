@@ -1,9 +1,8 @@
 package com.devsuperior.dslist.projections;
 
-//Classe relacionada a consulta SQL feita em 'GameRepository'
-public interface GameMinProjection {
+//Interface relacionada a consulta SQL feita em 'GameRepository'
 
-	//Declarando métodos getters para cada dado que a consulta irá retornar
+public interface GameMinProjection {
 	Long getId();
 	String getTitle();
 	Integer getGameYear();

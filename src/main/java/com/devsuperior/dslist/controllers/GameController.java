@@ -12,7 +12,7 @@ import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.services.GameService;
 
-//Camada 'controller' -> Porta de entrada para o back end
+//Classe responsável por ser a 'porta' de entrada para o backend
 
 @RestController
 @RequestMapping (value = "/games")  //Especificação do nome do endpoint
