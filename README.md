@@ -1,29 +1,30 @@
-# Projeto Spring Boot 1
+# Spring Boot project 1
+
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nathan00pdl/Projeto2_Java_Spring/blob/main/LICENSE) 
 
-# Sobre o projeto
+# About the project 
 
-Esse projeto foi realizado em conjunto com a Imersão Java Spring da [devsuperior](https://www.devsuperior.com.br/), ministrada pelo professor Nélio Alves.
+This project was carried out during the [devsuperior](https://www.devsuperior.com.br/), java spring immersion, taught by professor Nélio Alves.
 
-De forma resumida, esse é meu primeiro projeto utilizando o framework Spring Boot, com a implementação de Design Patterns, conexão com banco de dados (utilizamos o banco H2 como teste) e fazendo requisições http com Postman.
+From my first contacts with java language and its main characteristics, I became aware of SpringBoot, a tool that facilitates the development of java applications such as web aplications and microsservices.
 
-No geral, trata-se de um sistema básico de jogos e suas descrições.
+This project was my first structured application with the framework, implementing design patterns, connecting to the database (I used the H2 database as a test) and making HTTP requests with Postman.  
 
-
-# Competências
-- Padrão de Projeto: DAO (Data Access Object)
-- Sistema em camadas
+Overall, this is a basic gaming system and its descriptions.
 
 
-# Tecnologias utilizadas
-## Back end
+## Project structure 
+- Design pattern: DAO (Data Access Object)
+- Layered system - MVC
+
+## Backend
 - Java
-- Spring Boot (principal framework java para desenvolvimento comercial)
-- JPA / Hibernate (acesso a dados com mapeamento objeto-relacional (ORM))
-- Maven (gerenciamento de dependências)
+- Spring Boot 
+- JPA + Hibernate implementation (data access with Object-Relational Mapping - ORM)
+- Maven (dependency management)
   
-## Conexão ao banco de dados
-- JDBC (acesso a dados baseado em SQL)
+## Connection to the database 
+- JDBC (SQL-based data access)
   
-## Requisições web
-- Postman (teste de requisições com métodos GET, PUT, POST e DELETE)
+## Web requests
+- Postman (testing requests with methods GET, PUT, POST e DELETE)
