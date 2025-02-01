@@ -28,3 +28,9 @@ Overall, this is a basic gaming system and its descriptions.
   
 ## Web requests
 - Postman (testing requests with methods GET, PUT, POST e DELETE)
+
+### Contact with me
+
+Nathan Paiva de Lacerda
+
+https://www.linkedin.com/in/nathan-paiva-636336236
