@@ -1,33 +1,36 @@
-# Spring Boot project 1
+# Java project - API with Spring Boot and H2 
+
+### License
+
+This project is distributed under the **MIT** license
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nathan00pdl/Projeto2_Java_Spring/blob/main/LICENSE) 
 
 # About the project 
 
-This project was carried out during the [devsuperior](https://www.devsuperior.com.br/), java spring immersion, taught by professor Nélio Alves.
+This project was carried out during the [devsuperior](https://www.devsuperior.com.br/), java spring immersion, taught by professor **Nélio Alves**.
 
-From my first contacts with java language and its main characteristics, I became aware of SpringBoot, a tool that facilitates the development of java applications such as web aplications and microsservices.
+From my first contacts with **Java** language and its main characteristics, I became aware of **SpringBoot**, a tool that facilitates the development of java applications such as **web aplications** and **microsservices**.
 
-This project was my first structured application with the framework, implementing design patterns, connecting to the database (I used the H2 database as a test) and making HTTP requests with Postman.  
+This project was my first structured application with the framework, implementing **design patterns**, **connecting to the database** (I used the H2 database as a test) and making **HTTP requests** with **Postman**.  
 
 Overall, this is a basic gaming system and its descriptions.
 
-
 ## Project structure 
-- Design pattern: DAO (Data Access Object)
-- Layered system - MVC
+- Design pattern: **DAO** (Data Access Object)
+- **Layered system - MVC**
 
 ## Backend
-- Java
-- Spring Boot 
-- JPA + Hibernate implementation (data access with Object-Relational Mapping - ORM)
-- Maven (dependency management)
+- **Java**
+- **Spring Boot** 
+- **JPA** + **Hibernate** implementation (data access with Object-Relational Mapping - ORM)
+- **Maven** (dependency management)
   
 ## Connection to the database 
-- JDBC (SQL-based data access)
+- **JDBC** (SQL-based data access)
   
 ## Web requests
-- Postman (testing requests with methods GET, PUT, POST e DELETE)
+- **Postman** (testing requests with methods GET, PUT, POST e DELETE)
 
 ### Contact with me
 
