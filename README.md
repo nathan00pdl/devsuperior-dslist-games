@@ -2,7 +2,7 @@
 
 ### License
 
-This project is distributed under the **MIT** license
+This project is distributed under the **MIT** license.
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nathan00pdl/Projeto2_Java_Spring/blob/main/LICENSE) 
 
@@ -14,7 +14,7 @@ From my first contacts with **Java** language and its main characteristics, I be
 
 This project was my first structured application with the framework, implementing **design patterns**, **connecting to the database** (I used the H2 database as a test) and making **HTTP requests** with **Postman**.  
 
-Overall, this is a basic gaming system and its descriptions.
+Overall, this is a basic **gaming system** and its **descriptions**.
 
 ## Project structure 
 - Design pattern: **DAO** (Data Access Object)
@@ -23,7 +23,7 @@ Overall, this is a basic gaming system and its descriptions.
 ## Backend
 - **Java**
 - **Spring Boot** 
-- **JPA** + **Hibernate** implementation (data access with Object-Relational Mapping - ORM)
+- **JPA** + **Hibernate** implementation (data access with Object-Relational Mapping - **ORM**)
 - **Maven** (dependency management)
   
 ## Connection to the database 
