@@ -18,7 +18,7 @@ Overall, this is a basic **gaming system** and its **descriptions**.
 
 ## Project structure 
 - Design pattern: **DAO** (Data Access Object)
-- **Layered system - MVC**
+- **Layered architecture - MVC**
 
 ## Backend
 - **Java**
