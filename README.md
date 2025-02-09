@@ -17,8 +17,8 @@ This project was my first structured application with the framework, implementin
 Overall, this is a basic **gaming system** and its **descriptions**.
 
 ## Project Structure 
-- Design pattern: **DAO** (Data Access Object)
 - **Layered architecture - MVC**
+- Design pattern: **DAO** (Data Access Object)
 
 ## Backend
 - **Java**
