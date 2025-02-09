@@ -6,7 +6,7 @@ This project is distributed under the **MIT** license.
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nathan00pdl/Projeto2_Java_Spring/blob/main/LICENSE) 
 
-# About the project 
+# About the Project 
 
 This project was carried out during the [devsuperior](https://www.devsuperior.com.br/), java spring immersion, taught by professor **Nélio Alves**.
 
@@ -16,7 +16,7 @@ This project was my first structured application with the framework, implementin
 
 Overall, this is a basic **gaming system** and its **descriptions**.
 
-## Project structure 
+## Project Structure 
 - Design pattern: **DAO** (Data Access Object)
 - **Layered architecture - MVC**
 
@@ -26,7 +26,7 @@ Overall, this is a basic **gaming system** and its **descriptions**.
 - **JPA** + **Hibernate** implementation (data access with Object-Relational Mapping - **ORM**)
 - **Maven** (dependency management)
   
-## Connection to the database 
+## Connection to the Database 
 - **JDBC** (SQL-based data access)
   
 ## Web requests
