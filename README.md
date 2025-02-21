@@ -2,7 +2,7 @@
 
 ### License
 
-This project is distributed under the **MIT** license.
+This project is licensed under **MIT** license. See the `LICENSE` file for more informations. 
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/nathan00pdl/Projeto2_Java_Spring/blob/main/LICENSE) 
 
