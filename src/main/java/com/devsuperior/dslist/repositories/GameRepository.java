@@ -1,4 +1,4 @@
-package com.devsuperior.dslist.reppositories;
+package com.devsuperior.dslist.repositories;
 
 import java.util.List;
 
