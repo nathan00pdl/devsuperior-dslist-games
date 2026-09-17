@@ -10,7 +10,7 @@ import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.projections.GameMinProjection;
-import com.devsuperior.dslist.reppositories.GameRepository;
+import com.devsuperior.dslist.repositories.GameRepository;
 
 //Camada de 'Services' envia dados padronizados em DTO (e não como uma entidade) para camada de 'Controllers'
 
