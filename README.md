@@ -1,39 +1,90 @@
-# Java project - API with Spring Boot and H2 
+# DSList — Game Lists API
 
-### License
+[![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/17/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.1-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![License](https://img.shields.io/github/license/nathan00pdl/devsuperior-dslist-games)](LICENSE)
 
-This project is licensed under **MIT** license. See the `LICENSE` file for more informations. 
+A REST API for browsing games grouped into lists and reordering the games inside a list.
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/nathan00pdl/Projeto2_Java_Spring/blob/main/LICENSE) 
+Built during the [DevSuperior](https://devsuperior.com.br/) Java Spring immersion, taught by Nélio Alves. It was my first structured application with Spring Boot.
 
-# About the Project 
+## Tech stack
 
-This project was carried out during the [devsuperior](https://www.devsuperior.com.br/), java spring immersion, taught by professor **Nélio Alves**.
+- **Java 17**
+- **Spring Boot 3.1.1** — Spring Web and Spring Data JPA
+- **Hibernate** (JPA implementation)
+- **H2** in-memory database for the default profile
+- **PostgreSQL** for the `dev` and `prod` profiles
+- **Maven**, through the Maven Wrapper (`./mvnw`)
 
-From my first contacts with **Java** language and its main characteristics, I became aware of **SpringBoot**, a tool that facilitates the development of java applications such as **web aplications** and **microsservices**.
+## Architecture
 
-This project was my first structured application with the framework, implementing **design patterns**, **connecting to the database** (I used the H2 database as a test) and making **HTTP requests** with **Postman**.  
+Layered: `controllers` → `services` → `repositories` → `entities`.
 
-Overall, this is a basic **gaming system** and its **descriptions**.
+- **DTOs** (`GameDTO`, `GameMinDTO`, `GameListDTO`, `ReplacementDTO`) keep entities out of the HTTP responses.
+- **Projections** (`GameMinProjection`) read only the columns a list view needs.
+- **Native queries** in the repositories search the games of a list and update a game's position when the list is reordered.
+- A many-to-many relationship between games and lists is mapped by the `Belonging` entity, with a composite key (`BelongingPK`) and the game's `position` in the list.
 
-## Project Structure 
-- **Layered architecture - MVC**
-- Design pattern: **DAO** (Data Access Object)
+## Endpoints
 
-## Backend
-- **Java**
-- **Spring Boot** 
-- **JPA** + **Hibernate** implementation (data access with Object-Relational Mapping - **ORM**)
-- **Maven** (dependency management)
-  
-## Connection to the Database 
-- **JDBC** (SQL-based data access)
-  
-## Web requests
-- **Postman** (testing requests with methods GET, PUT, POST e DELETE)
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/games` | All games, summarized |
+| `GET` | `/games/{id}` | One game, with full details |
+| `GET` | `/lists` | All game lists |
+| `GET` | `/lists/{listId}/games` | The games of a list, in order |
+| `POST` | `/lists/{listId}/replacement` | Moves a game to another position in the list |
 
-### Contact with me
+Moving the game at position 3 to position 1 of list 1:
 
-Nathan Paiva de Lacerda
+```bash
+curl -X POST http://localhost:8080/lists/1/replacement \
+  -H "Content-Type: application/json" \
+  -d '{ "sourceIndex": 3, "destinationIndex": 1 }'
+```
 
-https://www.linkedin.com/in/nathan-paiva-636336236
+## Running locally
+
+Requirements: **Java 17**. Maven does not need to be installed.
+
+```bash
+git clone https://github.com/nathan00pdl/devsuperior-dslist-games.git
+cd devsuperior-dslist-games
+./mvnw spring-boot:run
+```
+
+The API starts on `http://localhost:8080` with the `test` profile: an in-memory H2 database seeded from `src/main/resources/import.sql` with 2 lists and 10 games. The H2 console is at `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2:mem:testdb`, user `sa`, empty password).
+
+### Profiles and environment variables
+
+The profile is chosen with `APP_PROFILE` (default: `test`).
+
+| Profile | Database | Variables |
+|---|---|---|
+| `test` | H2 in memory | none |
+| `dev` | Local PostgreSQL | `DB_PASSWORD` (required), `DB_URL` (default `jdbc:postgresql://localhost:5432/dslist`), `DB_USERNAME` (default `postgres`) |
+| `prod` | PostgreSQL | `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` |
+
+`CORS_ORIGINS` sets the allowed origins in every profile (default `http://localhost:5173,http://localhost:3000`).
+
+The `dev` and `prod` profiles do not create the schema (`ddl-auto=none`). Run `create.sql` first — it creates the tables and inserts the sample data:
+
+```bash
+psql -U postgres -d dslist -f create.sql
+APP_PROFILE=dev DB_PASSWORD=your_password ./mvnw spring-boot:run
+```
+
+### Tests
+
+```bash
+./mvnw test
+```
+
+## License
+
+Licensed under the [MIT License](LICENSE).
+
+## Contact
+
+Nathan Paiva de Lacerda — [LinkedIn](https://www.linkedin.com/in/nathan-paiva-636336236)
