@@ -72,6 +72,19 @@ The `dev` and `prod` profiles do not create the schema (`ddl-auto=none`). Run `c
 
 ```bash
 psql -U postgres -d dslist -f create.sql
+```
+
+Then create your `.env` from the template, fill in the password, and load it before starting:
+
+```bash
+cp .env.example .env
+set -a && source .env && set +a
+./mvnw spring-boot:run
+```
+
+`set -a` exports everything read from the file as an environment variable, which is how Spring sees it — Java does not read `.env` on its own. `.env` is ignored by git and must never be committed. Passing the values inline also works:
+
+```bash
 APP_PROFILE=dev DB_PASSWORD=your_password ./mvnw spring-boot:run
 ```
 
