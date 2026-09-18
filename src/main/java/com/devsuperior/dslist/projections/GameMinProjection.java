@@ -1,6 +1,6 @@
 package com.devsuperior.dslist.projections;
 
-//Interface relacionada a consulta SQL feita em 'GameRepository'
+// projection for the custom query in GameRepository: only the columns a list view needs
 
 public interface GameMinProjection {
 	Long getId();

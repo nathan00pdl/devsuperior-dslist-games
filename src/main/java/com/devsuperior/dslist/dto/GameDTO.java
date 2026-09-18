@@ -22,10 +22,10 @@ public class GameDTO {
 	
 	public GameDTO() {}
 	public GameDTO(Game entity) {
-		BeanUtils.copyProperties(entity, this);  //Passagem de tudo que está na entidade (Game) para esse DTO (GameDTO)
+		BeanUtils.copyProperties(entity, this);  // copies every matching field from the entity into this DTO
 	}
 
-	//Obs: Com o uso do método 'BeansUtils' é necessário a declaração tanto dos métodos getters como setters  
+	// BeanUtils matches fields through getters and setters, so both are required here
 	
 	public Long getId() {
 		return id;

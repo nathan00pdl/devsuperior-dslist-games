@@ -6,9 +6,9 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-//Classe 'Pertencimento' -> cada jogo pertence a qual lista (qual posição na lista)
+// which list a game belongs to, and its position inside that list
 
-@Entity  //Configuração da classe para equivaler a uma tabela do banco relacional
+@Entity
 @Table (name = "tb_belonging")
 public class Belonging {  
 

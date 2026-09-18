@@ -12,12 +12,11 @@ import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.projections.GameMinProjection;
 import com.devsuperior.dslist.repositories.GameRepository;
 
-//Camada de 'Services' envia dados padronizados em DTO (e não como uma entidade) para camada de 'Controllers'
 
-@Service  //"Registrando" a classe no sistemas   
+@Service
 public class GameService {
 
-	@Autowired //"injeção" de uma instância da classe 'GameRepository' na classe 'GameService'
+	@Autowired
 	private GameRepository gameRepository;
 	
 	@Transactional(readOnly = true)
@@ -28,13 +27,13 @@ public class GameService {
 	
 	@Transactional(readOnly = true)
 	public List<GameMinDTO> findAll(){
-		List<Game> result = gameRepository.findAll();  //'findAll()' é um método disponibilizado pelo próprio Spring
-		return result.stream().map(x -> new GameMinDTO(x)).toList();  //Transformação da lista tipo 'Game' para 'GameMinDTO'
+		List<Game> result = gameRepository.findAll();
+		return result.stream().map(x -> new GameMinDTO(x)).toList();
 	}
 	
 	@Transactional(readOnly = true)
 	public List<GameMinDTO> findByList(Long listId){
 		List<GameMinProjection> result = gameRepository.searchByList(listId); 
-		return result.stream().map(x -> new GameMinDTO(x)).toList(); //Transformação da lista tipo 'GameMinProjection' para 'GameMinDTO'
+		return result.stream().map(x -> new GameMinDTO(x)).toList();
 	}
 }

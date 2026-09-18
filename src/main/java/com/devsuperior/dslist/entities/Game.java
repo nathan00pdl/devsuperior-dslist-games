@@ -9,19 +9,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//'Game' será uma entidade mapeada com o banco de dados
 
 @Entity 
 @Table (name = "tb_game")
 public class Game {
 
 	@Id  
-	@GeneratedValue (strategy = GenerationType.IDENTITY)  //'id' autoincrementado 
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String title;
 	
-	@Column (name = "game_year")  //'year' -> palavra reservada no bancoo de dados
+	@Column (name = "game_year")  // "year" is a reserved word in the database
 	private Integer year;
 	
 	private String genre;

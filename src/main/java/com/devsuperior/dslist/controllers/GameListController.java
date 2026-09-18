@@ -16,27 +16,23 @@ import com.devsuperior.dslist.dto.ReplacementDTO;
 import com.devsuperior.dslist.services.GameListService;
 import com.devsuperior.dslist.services.GameService;
 
-//Camada 'controller' -> Porta de entrada para o back end
 
 @RestController
-@RequestMapping (value = "/lists")  //Especificação do nome do endpoint
+@RequestMapping (value = "/lists")
 public class GameListController {
 
-	@Autowired //"injeção" de uma instância da classe 'GameListService' na classe 'GameListController'
+	@Autowired
 	private GameListService gameListService;
 	
-	@Autowired //"injeção" de uma instância da classe 'GameService' na classe 'GameListController'
+	@Autowired
 	private GameService gameService;
 	
 
-	//Declarando formato das requisições que serão retornadas pelo 'Postman'
-	//Busca por todos os dados
 	@GetMapping
 	public List<GameListDTO> findAll(){
 		 return gameListService.findAll();
 	}
 	
-	//Busca por todos os dados
 	@GetMapping (value = "/{listId}/games")
 	public List<GameMinDTO> findByList(@PathVariable Long listId){
 		return gameService.findByList(listId);

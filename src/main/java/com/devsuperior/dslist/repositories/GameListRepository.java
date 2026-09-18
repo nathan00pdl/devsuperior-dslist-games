@@ -6,12 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.devsuperior.dslist.entities.GameList;
 
-//Essa interface representa um objeto de acesso a dados, promovendo consultas no banco de dados
-//Ferramenta disponibilizada pelo próprio Spring: 'jpaRepository'
 
 public interface GameListRepository extends JpaRepository<GameList, Long>{
 	
-	//Atualização da posição do jogo ao qual foi modificado
+	// updates the position of a game inside a list
 	@Modifying
 	@Query(
 		nativeQuery = true, 

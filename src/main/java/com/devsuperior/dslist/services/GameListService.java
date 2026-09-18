@@ -14,7 +14,7 @@ import com.devsuperior.dslist.repositories.GameRepository;
 
 
 
-@Service  //'Registrando' a classe no sistemas   
+@Service
 public class GameListService {
 
 	@Autowired
@@ -23,7 +23,7 @@ public class GameListService {
 	
 	@Transactional(readOnly = true)
 	public List<GameListDTO> findAll(){
-		List<GameList> result = gameListRepository.findAll();  //'findAll()' é um método disponibilizado pelo próprio Spring
+		List<GameList> result = gameListRepository.findAll();
 		return result.stream().map(x -> new GameListDTO(x)).toList();
 	}
 	
@@ -31,18 +31,17 @@ public class GameListService {
 	@Autowired 
 	private GameRepository gameRepository;
 	
-	//Lógica de alteração das posições dos jogos
+	// reorders a list by moving one game and shifting the ones in between
 	@Transactional
 	public void move(Long listId, int sourceIndex, int destinationIndex) {
 		
-		//Buscando da memória a lista de jogos
 		List<GameMinProjection> list = gameRepository.searchByList(listId);
 		
-		//Alteração de posição -> remove o jogo de uma posição (sourceIndex) e insere na posição escolhida (destinationIndex)
+		// remove the game from sourceIndex and insert it at destinationIndex
 		GameMinProjection obj = list.remove(sourceIndex);
 		list.add(destinationIndex, obj);
 		
-		//Declaração de variáveis para guardar a posição mínima e máxima entre 'sourceIndex' e 'destinationIndex'
+		// only the games between the two positions need their position updated
 		int min = sourceIndex < destinationIndex ? sourceIndex : destinationIndex;
 		int max = sourceIndex < destinationIndex ? destinationIndex : sourceIndex;
 		
