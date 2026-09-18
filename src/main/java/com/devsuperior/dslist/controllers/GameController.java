@@ -12,22 +12,18 @@ import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.services.GameService;
 
-//Classe responsável por ser a 'porta' de entrada para o backend
 
 @RestController
-@RequestMapping (value = "/games")  //Especificação do nome do endpoint
+@RequestMapping (value = "/games")
 public class GameController {
 
-	@Autowired //"injeção" de uma instância da classe 'GameService' na classe 'GameController'
+	@Autowired
 	private GameService gameService;
 
-	//Declarando formato das requisições que serão retornadas pelo 'Postman'
-	//Busca pelo 'id'
 	@GetMapping(value = "/{id}")
 	public GameDTO findById(@PathVariable Long id){
 		 return gameService.findById(id);
 	}
-	//Busca por todos os dados
 	@GetMapping
 	public List<GameMinDTO> findAll(){
 		 return gameService.findAll();

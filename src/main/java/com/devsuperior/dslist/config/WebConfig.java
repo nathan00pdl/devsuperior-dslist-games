@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-//Classe de configuração dos 'cors' no Backend
+// CORS configuration for the frontend running on another origin
 
 @Configuration
 public class WebConfig {

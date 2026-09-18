@@ -6,7 +6,7 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Embeddable  //Encapsulamento dos dois atributos 
+@Embeddable  // composite key: the two attributes together identify the row
 public class BelongingPK {
 	
 	@ManyToOne
